@@ -1,4 +1,5 @@
 # Zenodora
+![Android CI](https://github.com/Kalaiz/zenodora/workflows/Android%20CI/badge.svg?branch=main)
 ![Status](https://img.shields.io/badge/status-work--in--progress-red)
 
 ## Table of Content:
