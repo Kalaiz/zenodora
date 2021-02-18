@@ -9,10 +9,12 @@
 - [Installation](#%EF%B8%8F-installation)
 
 ### 📜 Description:
-A simple distraction-free Pomodora timer Android app.
-
+A simple distraction-free Pomodora timer Android app. 
 
 ### 🛠️ Tools Used:
+  - Test Driven Development(TDD) approach
+  - RoboElectric
+  - Junit 4
   - Kotlin
 
 
