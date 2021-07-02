@@ -12,8 +12,7 @@
 A simple distraction-free Pomodora timer Android app. 
 
 ### 🛠️ Tools Used:
-  - Test Driven Development(TDD) approach
-  - RoboElectric
+  - ~~RoboElectric~~ AndroidX fragment-testing library 
   - Junit 4
   - Kotlin
 
