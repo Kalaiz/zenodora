@@ -20,7 +20,7 @@ class HomeFragment: Fragment(R.layout.fragment_home){
                 view ->
             view.findNavController().navigate(R.id.action_homeFragment_to_settingsFragment)
         }
-        
+
         return  binding.root
 
     }

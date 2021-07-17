@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".HomeFragment"
+    app:layoutDescription="@xml/fragment_home_scene">
 
     <com.kalai.zenodora.waveview.WaveView
         android:id="@+id/wave_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#1565C0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:above_wave_color="@android:color/white"
         app:blow_wave_color="@android:color/white"
         app:progress="80"
@@ -24,17 +29,27 @@
         android:layout_height="0dp"
         app:layout_constraintVertical_bias="0.375"
         android:text="30:00"
-        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintTop_toTopOf="@id/sound_toggle_button"
+        app:layout_constraintBottom_toTopOf="@id/schedule_card_view"
+        app:layout_constraintHeight_percent="@fraction/time_left_height_percent"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintWidth_percent="0.5"
         app:autoSizeTextType="uniform"
         android:maxLines="1"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/sound_toggle_button" f="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_guide_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".05"
+        />
 
     <ToggleButton
         android:id="@+id/sound_toggle_button"
@@ -42,12 +57,12 @@
         android:layout_height="0dp"
         android:background="@drawable/selector_sound_toggle_button"
         app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_guide_line"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/settings_image_view"
         app:layout_constraintBottom_toTopOf="@id/time_left_text_view"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintHeight_percent="@fraction/icon_height_percent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintVertical_bias="0.1"
         style="@style/image_toggle_button" />
@@ -61,11 +76,11 @@
         app:layout_constraintHeight_default="percent"
         android:padding="0dp"
         android:clickable="true"
+        app:layout_constraintTop_toBottomOf="@id/top_guide_line"
         app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintHeight_percent="@fraction/icon_height_percent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintVertical_bias="0.1"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/time_left_text_view"
@@ -73,27 +88,30 @@
 
 
     <ImageView
+        android:id="@+id/arrow_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.045"
         app:layout_constraintVertical_bias="0.875"
         android:src="@drawable/ic_arrow"
-        app:layout_constraintTop_toBottomOf="@id/time_left_text_view"
+        app:layout_constraintTop_toBottomOf="@id/schedule_card_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/schedule_card_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:cardCornerRadius="20dp"
-        app:layout_constraintHeight_percent="0.25"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintHeight_percent="@fraction/schedule_card_view_height_percent"
         app:layout_constraintWidth_percent="0.9"
         app:cardBackgroundColor="@color/semi_transparent"
         app:layout_constraintTop_toBottomOf="@id/time_left_text_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" >
+        app:layout_constraintVertical_bias="0.7"
+        app:layout_constraintBottom_toTopOf="@id/arrow_button" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -102,14 +120,13 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/item_mode"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:paddingTop="5dp"
-               android:orientation="horizontal">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
             </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>

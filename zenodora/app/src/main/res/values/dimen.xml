@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="time_left_height_percent" type="fraction">0.15</item>
+    <item type="fraction" name="icon_height_percent">0.04</item>
+    <item type="fraction" name="schedule_card_view_height_percent">0.26</item>
+
+</resources>
