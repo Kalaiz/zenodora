@@ -8,8 +8,10 @@
         motion:duration="1050">
 
         <OnSwipe
-            motion:touchRegionId="@id/wave_view"
-            motion:dragDirection="dragDown"/>
+            motion:touchRegionId="@id/space"
+            motion:dragDirection="dragDown"
+            motion:dragThreshold="0.9"/>
+
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
@@ -49,7 +51,7 @@
             android:layout_height="0dp"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintVertical_bias="0.875"
-            motion:layout_constraintTop_toBottomOf="@id/schedule_card_view"
+            motion:layout_constraintTop_toBottomOf="@id/time_left_text_view"
             motion:layout_constraintHeight_percent="0.045"
             motion:layout_constraintStart_toStartOf="parent">
 
@@ -60,11 +62,9 @@
             motion:layout_constraintWidth_percent="0.9"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="0dp"
-            android:visibility="gone"
             android:layout_height="0dp"
             motion:layout_constraintVertical_bias="0.7"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/time_left_text_view"
+            motion:layout_constraintTop_toBottomOf="parent"
             motion:layout_constraintHeight_percent="@fraction/schedule_card_view_height_percent"
             motion:layout_constraintStart_toStartOf="parent" />
     </ConstraintSet>
