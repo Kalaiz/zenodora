@@ -14,8 +14,9 @@ import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.kalai.zenodora.databinding.ActivityEntryBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class EntryActivity : AppCompatActivity() {
 
     private  lateinit var binding: ActivityEntryBinding

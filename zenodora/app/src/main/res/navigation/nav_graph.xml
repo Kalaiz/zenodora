@@ -11,11 +11,21 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.kalai.zenodora.SettingsFragment"
         android:label="Settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popUpTo="@+id/homeFragment"
+            app:popUpToInclusive="true"
+            app:exitAnim="@anim/nav_default_exit_anim"/>
+    </fragment>
 </navigation>

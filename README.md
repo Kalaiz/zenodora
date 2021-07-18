@@ -13,7 +13,10 @@ A simple distraction-free Pomodora timer Android app.
 
 ### 🛠️ Tools Used:
   - ~~RoboElectric~~ AndroidX fragment-testing library 
+  - Hilt Dependency injection
   - Junit 4
+  - Android architecture component such as Room, Viewmodel and  Viewbinding.
+  - Android Jetpack navigation component
   - Kotlin
 
 

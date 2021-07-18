@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
+<!-- TODO-->
     <SwitchPreferenceCompat
-        app:key="notifications"
-        app:title="Enable message notifications"/>
+        app:key="default_time"
+        app:title="Set default pomodora time"/>
 
     <Preference
         app:key="feedback"
