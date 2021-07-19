@@ -1,4 +1,4 @@
-package com.kalai.zenodora.waveview
+package com.kalai.zenodora.view.waveview
 
 import android.content.Context
 import android.graphics.Canvas

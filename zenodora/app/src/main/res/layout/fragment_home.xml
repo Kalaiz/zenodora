@@ -7,7 +7,7 @@
     tools:context=".HomeFragment"
     app:layoutDescription="@xml/fragment_home_scene">
 
-    <com.kalai.zenodora.waveview.WaveView
+    <com.kalai.zenodora.view.waveview.WaveView
         android:id="@+id/wave_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:above_wave_color="@android:color/white"
         app:blow_wave_color="@android:color/white"
-        app:progress="80"
+        app:progress="70"
         app:wave_height="little"
         app:wave_hz="slow"
         app:wave_length="little" />
