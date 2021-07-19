@@ -1,85 +1,81 @@
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.cardview.widget.CardView
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="125dp"
-    android:layout_height="match_parent">
+    android:layout_width="@dimen/session_card_width"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="5dp">
 
 
 
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/session_card_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:cardCornerRadius="10dp"
-        android:layout_margin="5dp"
-        app:layout_constraintHorizontal_weight="4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/time_stamp_card_view"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/time_stamp_card_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:cardCornerRadius="10dp"
-        app:cardBackgroundColor="@color/purple_200"
-        app:layout_constraintHeight_percent="0.65"
-        app:layout_constraintHorizontal_weight="1.25"
-        app:layout_constraintStart_toEndOf="@id/session_card_view"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         >
-        <LinearLayout
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/type_emoji_text_view"
+            android:src="@drawable/ic_sound"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/status_circle_view"
+            app:layout_constraintBottom_toTopOf="@id/header_guide_line"
+            />
+
+        <View
+            android:id="@+id/status_circle_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@id/type_emoji_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/header_guide_line"
+            android:background="@drawable/circle"/>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/header_guide_line"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/session_description_text_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Helleo"
             android:gravity="center"
-            android:weightSum="5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header_guide_line"
+            app:layout_constraintBottom_toTopOf="@id/start_time_stamp_chip"/>
 
-       >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:src="@drawable/ic_sound"/>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="5:00"
-                android:layout_weight="2"
-                android:rotation="90"
-                android:maxLines="1"
-                android:textAlignment="center"
-                android:gravity="center"
-                />
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>
+        <com.google.android.material.chip.Chip
+            android:id="@+id/start_time_stamp_chip"
+            android:layout_width="0dp"
+            app:chipBackgroundColor="@color/purple_200"
+            android:layout_height="wrap_content"
+            app:chipIcon="@drawable/ic_time"
+            android:textAlignment="center"
+            android:text="15:00"
+            app:layout_constraintTop_toBottomOf="@id/session_description_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_percent="0.75"
+            />
 
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!--        <androidx.cardview.widget.CardView-->
-    <!--            android:id="@+id/time_stamp_chip"-->
-    <!--            android:layout_width="0dp"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            app:cardBackgroundColor="@color/purple_200"-->
-    <!--            app:cardCornerRadius="20dp"-->
-    <!--            android:layout_margin="2dp"-->
-    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--            app:layout_constraintStart_toEndOf="@id/textView"-->
-    <!--            app:layout_constraintTop_toTopOf="parent"-->
-    <!--            app:layout_constraintEnd_toEndOf="parent"-->
-    <!--         >-->
-
-
-    <!--        </androidx.cardview.widget.CardView>-->
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
