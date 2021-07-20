@@ -13,68 +13,66 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        >
+        android:layout_marginBottom="5dp">
+
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/type_emoji_text_view"
-            android:src="@drawable/ic_sound"
+            android:src="@drawable/ic_book"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header_guide_line"
+            app:layout_constraintVertical_weight="0.1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/status_circle_view"
-            app:layout_constraintBottom_toTopOf="@id/header_guide_line"
-            />
-
-        <View
-            android:id="@+id/status_circle_view"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toEndOf="@id/type_emoji_text_view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/header_guide_line"
-            android:background="@drawable/circle"/>
+            app:layout_constraintBottom_toTopOf="@id/session_description_text_view"/>
+
+
 
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/header_guide_line"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1"
-            />
+            app:layout_constraintGuide_percent="0.05"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_guide_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8"/>
+
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/session_description_text_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="Helleo"
+            android:layout_margin="5dp"
+            android:text="Helleo safghas sadg asdg asdg asfgh "
+            android:ellipsize="end"
+            android:maxLines="2"
+            app:layout_constraintVertical_weight="0.25"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/header_guide_line"
-            app:layout_constraintBottom_toTopOf="@id/start_time_stamp_chip"/>
+            app:layout_constraintTop_toBottomOf="@id/type_emoji_text_view"
+            app:layout_constraintBottom_toTopOf="@id/bottom_guide_line"/>
+
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/start_time_stamp_chip"
             android:layout_width="0dp"
-            app:chipBackgroundColor="@color/purple_200"
             android:layout_height="wrap_content"
-            app:chipIcon="@drawable/ic_time"
-            android:textAlignment="center"
+            app:chipIcon="@drawable/ic_sound"
             android:text="15:00"
-            app:layout_constraintTop_toBottomOf="@id/session_description_text_view"
+            app:chipBackgroundColor="@color/purple_200"
+            app:layout_constraintWidth_percent="0.75"
+            app:layout_constraintTop_toTopOf="@id/bottom_guide_line"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintWidth_percent="0.75"
-            />
-
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

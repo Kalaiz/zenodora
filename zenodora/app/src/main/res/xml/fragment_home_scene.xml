@@ -5,7 +5,7 @@
     <Transition
         motion:constraintSetStart="@+id/start"
         motion:constraintSetEnd="@+id/end"
-        motion:duration="1050">
+        motion:duration="1350">
 
         <OnSwipe
             motion:touchRegionId="@id/space"
@@ -14,59 +14,118 @@
 
     </Transition>
 
+
     <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/arrow_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintWidth_percent="@fraction/arrow_image_view_height_percent"
+            android:src="@drawable/ic_arrow"
+            motion:layout_constraintTop_toBottomOf="@id/bottom_guide_line"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" >
+            <Transform android:rotation="180" />
+    </Constraint>
 
         <Constraint
             android:id="@+id/schedule_card_view"
             motion:layout_constraintWidth_percent="0.9"
+            motion:layout_constraintHeight_max="200dp"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            motion:layout_constraintVertical_bias="0.7"
+            motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintBottom_toTopOf="@id/arrow_button"
-            motion:layout_constraintTop_toBottomOf="@id/time_left_text_view"
-            motion:layout_constraintHeight_percent="@fraction/schedule_card_view_height_percent"
-            motion:layout_constraintStart_toStartOf="parent" />
+            motion:layout_constraintTop_toBottomOf="@id/play_pause_image_view"
+            motion:layout_constraintHeight_percent="@fraction/schedule_card_view_height_percent" />
+
         <Constraint
-            android:id="@+id/arrow_button"
+            android:id="@+id/sound_toggle_button"
+            android:elevation="10dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toStartOf="@id/settings_image_view"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.075"
+            motion:layout_constraintHeight_percent="@fraction/icon_height_percent"
+            motion:layout_constraintHorizontal_bias="0.1"
+            motion:layout_constraintDimensionRatio="1:1" />
+        <Constraint
+            android:id="@+id/settings_image_view"
+            android:elevation="10dp"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintVertical_bias="0.875"
-            motion:layout_constraintTop_toBottomOf="@id/schedule_card_view"
-            motion:layout_constraintHeight_percent="0.045"
-            motion:layout_constraintStart_toStartOf="parent">
+            motion:layout_constraintVertical_bias="0.075"
+            motion:layout_constraintHeight_percent="@fraction/icon_height_percent"
+            motion:layout_constraintHorizontal_bias="0.9"
+            motion:layout_constraintDimensionRatio="1:1" />
 
-            <Transform android:rotation="180" />
-        </Constraint >
+
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
 
         <Constraint
             android:id="@+id/arrow_button"
-            motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            motion:layout_constraintWidth_percent="@fraction/arrow_image_view_height_percent"
+            android:src="@drawable/ic_arrow"
+            motion:layout_constraintTop_toBottomOf="@id/bottom_guide_line"
+            motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintVertical_bias="0.875"
-            motion:layout_constraintTop_toBottomOf="@id/time_left_text_view"
-            motion:layout_constraintHeight_percent="0.045"
-            motion:layout_constraintStart_toStartOf="parent">
-
+            motion:layout_constraintStart_toStartOf="parent" >
             <Transform android:rotation="0" />
-        </Constraint >
+        </Constraint>
+
         <Constraint
             android:id="@+id/schedule_card_view"
             motion:layout_constraintWidth_percent="0.9"
+            motion:layout_constraintHeight_max="200dp"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            motion:layout_constraintVertical_bias="0.7"
+            motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toBottomOf="parent"
-            motion:layout_constraintHeight_percent="@fraction/schedule_card_view_height_percent"
-            motion:layout_constraintStart_toStartOf="parent" />
+            motion:layout_constraintHeight_percent="@fraction/schedule_card_view_height_percent" />
+
+        <Constraint
+            android:id="@+id/settings_image_view"
+            android:elevation="10dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.1"
+            motion:layout_constraintHeight_percent="@fraction/icon_height_percent"
+            motion:layout_constraintHorizontal_bias="0.9"
+            motion:layout_constraintDimensionRatio="1:1" />
+
+        <Constraint
+            android:id="@+id/sound_toggle_button"
+            android:elevation="10dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toStartOf="@id/settings_image_view"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.1"
+            motion:layout_constraintHeight_percent="@fraction/icon_height_percent"
+            motion:layout_constraintHorizontal_bias="0.1"
+            motion:layout_constraintDimensionRatio="1:1" />
+
+
     </ConstraintSet>
 
 </MotionScene>

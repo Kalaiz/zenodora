@@ -23,7 +23,8 @@ class HomeFragment: Fragment(R.layout.fragment_home){
     ): View {
 
 
-      binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+
         binding.settingsImageView.setOnClickListener {
                 view ->
             view.findNavController().navigate(R.id.action_homeFragment_to_settingsFragment)
@@ -32,6 +33,8 @@ class HomeFragment: Fragment(R.layout.fragment_home){
         return  binding.root
 
     }
+
+
 
 
 }

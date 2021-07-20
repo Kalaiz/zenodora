@@ -2,6 +2,9 @@
 <resources>
     <fraction name="time_left_height_percent">0.25</fraction>
     <fraction name="icon_height_percent">0.070</fraction>
-    <item type="fraction" name="schedule_card_view_height_percent">0.275</item>
-    <dimen name="session_card_width">150dp</dimen>
+    <item type="fraction" name="schedule_card_view_height_percent">0.325</item>
+    <dimen name="session_card_width">130dp</dimen>
+
+    <item type="fraction" name="schedule_card_view_header_guide_line_percent">0.105</item>
+    <item type="fraction" name="arrow_image_view_height_percent">0.030</item>
 </resources>

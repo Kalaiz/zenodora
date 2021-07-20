@@ -4,7 +4,9 @@
     <item name="time_left_height_percent" type="fraction">0.15</item>
     <item type="fraction" name="icon_height_percent">0.04</item>
     <item type="fraction" name="schedule_card_view_height_percent">0.26</item>
+    <item type="fraction" name="schedule_card_view_header_guide_line_percent">0.1</item>
 
+    <item type="fraction" name="arrow_image_view_height_percent">0.045</item>
     <dimen name="session_card_width">125dp</dimen>
 
 </resources>
