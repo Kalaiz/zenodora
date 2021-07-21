@@ -8,7 +8,6 @@
         motion:duration="1350">
 
         <OnSwipe
-            motion:touchRegionId="@id/space"
             motion:dragDirection="dragDown"
             motion:dragThreshold="0.9"/>
 
@@ -93,6 +92,7 @@
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:visibility="invisible"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toBottomOf="parent"
             motion:layout_constraintHeight_percent="@fraction/schedule_card_view_height_percent" />

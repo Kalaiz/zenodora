@@ -15,6 +15,7 @@ import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.kalai.zenodora.databinding.ActivityEntryBinding
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class EntryActivity : AppCompatActivity() {
@@ -23,6 +24,7 @@ class EntryActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Timber.plant(Timber.DebugTree())
         binding = ActivityEntryBinding.inflate(layoutInflater)
         val rootView = binding.root
         setContentView(rootView)
