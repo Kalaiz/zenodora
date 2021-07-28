@@ -1,20 +1,19 @@
 <androidx.cardview.widget.CardView
+    android:id="@+id/session_card_view"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/session_card_width"
     android:layout_height="match_parent"
     app:cardCornerRadius="10dp"
+    android:elevation="50dp"
     android:layout_margin="5dp">
 
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/session_card_view"
+        android:id="@+id/session_constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp">
-
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/header_guide_line"

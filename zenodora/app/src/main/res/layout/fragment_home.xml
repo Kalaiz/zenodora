@@ -12,7 +12,7 @@
     tools:context=".HomeFragment">
 
 
-    <com.kalai.zenodora.view.waveview.WaveView
+    <com.kalai.zenodora.view.WaveView
         android:id="@+id/wave_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,9 +24,9 @@
         app:above_wave_color="@android:color/white"
         app:blow_wave_color="@android:color/white"
         app:progress="70"
-        app:wave_height="little"
-        app:wave_hz="slow"
-        app:wave_length="little" />
+        app:wave_height="middle"
+        app:wave_hz="normal"
+        app:wave_length="middle" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -109,7 +109,7 @@
         android:id="@+id/time_left_text_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="30:00"
+        android:text="24:02"
         app:layout_constraintHeight_percent="@fraction/time_left_height_percent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/play_pause_image_view"
@@ -118,7 +118,6 @@
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -134,7 +133,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardCornerRadius="10dp"
-        app:cardElevation="0dp"
+        app:cardElevation="1dp"
+
         app:layout_constraintHeight_percent="@fraction/schedule_card_view_height_percent"
         app:layout_constraintWidth_percent="0.9"
         app:layout_constraintHeight_max="200dp"
@@ -147,6 +147,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/schedule_recycler_view"
+            android:transitionName="scheduler_recycler_view"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -159,6 +160,5 @@
             tools:orientation="horizontal" />
 
     </com.google.android.material.card.MaterialCardView>
-
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

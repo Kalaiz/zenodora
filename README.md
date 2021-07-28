@@ -11,6 +11,17 @@
 ### 📜 Description:
 A simple distraction-free Pomodora timer Android app. 
 
+<p align="center">
+A slight peek at the progress so far.</p>
+<p align="center">
+<img src="resources/demo.gif" width="25%" height="25%" /> 
+
+</p>
+<p align="center">
+Note: I am still working on this personal project.
+ </p>
+
+ 
 ### 🛠️ Tools Used:
   - ~~RoboElectric~~ AndroidX fragment-testing library 
   - Hilt Dependency injection

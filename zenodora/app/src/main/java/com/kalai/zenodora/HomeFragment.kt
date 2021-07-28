@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import com.kalai.zenodora.adapter.ScheduleAdapter
 import com.kalai.zenodora.databinding.FragmentHomeBinding
+import com.kalai.zenodora.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -33,7 +36,16 @@ class HomeFragment: Fragment(R.layout.fragment_home){
         }
 
 
-        val adapter = ScheduleAdapter()
+        val adapter = ScheduleAdapter( fun(number:Int){Timber.d(" Schedule touched index: $number")
+            val extras = FragmentNavigatorExtras(
+                binding.scheduleRecyclerView to "schedule_recycler_view_detail"
+            )
+
+            this.view?.findNavController()?.navigate(R.id.action_homeFragment_to_sessionDetailFragment,
+                null,
+                null,
+                extras)
+        })
         binding.scheduleRecyclerView.adapter = adapter
 
         viewModel.allSession.observe(viewLifecycleOwner, {
@@ -48,6 +60,5 @@ class HomeFragment: Fragment(R.layout.fragment_home){
 
         return  binding.root
     }
-
 
 }
